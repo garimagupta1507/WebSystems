@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>Monterey Whale Watching Tours</title>
+<link rel="stylesheet" href="Que1.css">
+
+</head>
+
+<body>
+
+	<nav id= navbar>
+
+		<ul>
+			<li><p class="logo"> <h2>California's Whale Watching Tours</h2></p></li>
+			<li><a class="button" href="Que1.html">Home</a></li>
+			<li><a class="button" href="https://seaspiritsantacruz.com/wildlife-safaris/morning-safari/">Login</a></li>
+			<li><a class="button" href="https://seaspiritsantacruz.com/wildlife-safaris/morning-safari/">Ongoing Tours</a></li>
+			<li><a class="button" href="SignUp.html">Signup</a></li>
+			<li><a class="button" href="https://seaspiritsantacruz.com/wildlife-safaris/morning-safari/">About</a></li>
+			<li><a class="button" href="https://seaspiritsantacruz.com/wildlife-safaris/morning-safari/">Contact Us</a></li>
+		</ul>
+		<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+	</nav>
+	<main>
+		<h1>(The Best Whale Watching Experience In Monterey Bay)</h1>
+
+		<img id="scream" src="http://chriswhalewatching.com/wp-content/uploads/2018/07/Check-Mate.jpg" width="600" height="400" alt="The whale">
+
+		<p>These trips last anywhere between 3-4 hours approximately and though our main goal is finding
+			the whales, there is so much more to see and experience during your time on the Bay.  Please
+			keep in mind these safaris take place in the wild with wild animals. For that reason trips are
+			always dependent on weather conditions, seasons and animal activity.</p>
+		<p>Tours may include sites of the cement ship, the SS Palo Alto, or if the whales call us north,
+			the deserted towering cement plant of Davenport with its own rich history. The various real
+			estate along our coastline, and seeing the wildlife that calls it home is always a treat. </p>
+			<canvas id="myCanvas" width="800" height="500"
+			style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.
+			</canvas>
+			<script>
+			window.onload = function() {
+			    var canvas = document.getElementById("myCanvas");
+			    var ctx = canvas.getContext("2d");
+			    var img = document.getElementById("scream");
+			   ctx.drawImage(img, 10, 10);
+			};
+			</script>
+			<!<img src="whale2.jpeg" width="600" height="400">
+
+	</main>
+</body>
+
+</html>

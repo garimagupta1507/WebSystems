@@ -1,0 +1,89 @@
+body{
+  background-color: Turquoise;
+
+}
+
+
+img{
+  padding: 37px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 2;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  border-right: 2px solid white;
+}
+
+li a {
+  background-color: DodgerBlue;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 45px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #bdedff;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.logo:hover {
+  background-color: Navy;
+}
+
+p.logo{
+  font-family: fantasy;
+}
+
+main{
+   background-color: PowderBlue;
+   margin-left: 125px;
+   margin-right: 125px;
+}
+
+h3
+{
+  margin-left: 125px;
+  margin-right: 125px;
+}
+
+form {
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 20px;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 500%;
+}
+
+nav{
+  background-color: MidnightBlue;
+  color: white;
+  padding: -5px -5px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  width: 50%;
+  height: 50px;
+   //padding: 8px;
+}
+
+
+/*# sourceMappingURL=/Que1.79e49774.css.map */

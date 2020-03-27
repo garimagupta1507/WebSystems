@@ -1,0 +1,84 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var prop_types_1 = __importDefault(require("prop-types"));
+var react_redux_1 = require("react-redux");
+var formActions_1 = require("../actions/formActions");
+var DefaultValueView = /** @class */ (function (_super) {
+    __extends(DefaultValueView, _super);
+    function DefaultValueView() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    DefaultValueView.prototype.componentDidMount = function () {
+        var _a;
+        var _b = this.props, defaultValue = _b.defaultValue, input = _b.input, initializeForm = _b.initializeForm, source = _b.source;
+        if (typeof defaultValue === 'undefined' || input) {
+            return;
+        }
+        initializeForm((_a = {},
+            _a[source] = typeof defaultValue === 'function'
+                ? defaultValue()
+                : defaultValue,
+            _a));
+    };
+    DefaultValueView.prototype.componentDidUpdate = function (prevProps) {
+        var _a;
+        var _b = this.props, defaultValue = _b.defaultValue, input = _b.input, initializeForm = _b.initializeForm, source = _b.source;
+        if (typeof defaultValue === 'undefined' || input) {
+            return;
+        }
+        if (defaultValue !== prevProps.defaultValue) {
+            initializeForm((_a = {},
+                _a[source] = typeof defaultValue === 'function'
+                    ? defaultValue()
+                    : defaultValue,
+                _a));
+        }
+    };
+    DefaultValueView.prototype.render = function () {
+        var _a = this.props, initializeForm = _a.initializeForm, decoratedComponent = _a.decoratedComponent, props = __rest(_a, ["initializeForm", "decoratedComponent"]);
+        return react_1.createElement(decoratedComponent, props);
+    };
+    DefaultValueView.propTypes = {
+        decoratedComponent: prop_types_1.default.oneOfType([
+            prop_types_1.default.element,
+            prop_types_1.default.func,
+        ]),
+        defaultValue: prop_types_1.default.any,
+        initializeForm: prop_types_1.default.func.isRequired,
+        input: prop_types_1.default.object,
+        source: prop_types_1.default.string,
+        validate: prop_types_1.default.oneOfType([prop_types_1.default.func, prop_types_1.default.array]),
+    };
+    return DefaultValueView;
+}(react_1.Component));
+exports.DefaultValueView = DefaultValueView;
+var DefaultValue = function (DecoratedComponent) {
+    return react_redux_1.connect(function () { return ({ decoratedComponent: DecoratedComponent }); }, { initializeForm: formActions_1.initializeForm })(DefaultValueView);
+};
+exports.default = DefaultValue;
