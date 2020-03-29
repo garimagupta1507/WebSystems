@@ -1,7 +1,5 @@
 **Student Name**:  Garima Gupta
 
-**NetID**: mm6326
-
 # Assignment Outline for CS651
 
 
